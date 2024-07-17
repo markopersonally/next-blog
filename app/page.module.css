@@ -1,0 +1,22 @@
+#container {
+  padding: 50px;
+  margin: auto;
+  width: 700px;
+  border: 1px solid #303096;
+}
+
+img {
+  border-radius: 20px;
+}
+
+.wrapper-post {
+  padding: 20px;
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  border: 1px solid #303096;
+}
+
+.description {
+  display: column;
+}
