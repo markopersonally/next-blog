@@ -14,9 +14,8 @@ export default function Home() {
         <Link href="/blog">
           <div className={styles["wrapper-post"]}>
             <Image
+              className={styles.picture}
               src={img1}
-              width={50}
-              height={50}
               alt="Picture of the author"
             />
             <div className={styles.description}>
@@ -28,9 +27,8 @@ export default function Home() {
         <Link href="/blog">
           <div className={styles["wrapper-post"]}>
             <Image
+              className={styles.picture}
               src={img1}
-              width={50}
-              height={50}
               alt="Picture of the author"
             />
             <div className={styles.description}>
@@ -42,9 +40,8 @@ export default function Home() {
         <Link href="/blog">
           <div className={styles["wrapper-post"]}>
             <Image
+              className={styles.picture}
               src={img2}
-              width={50}
-              height={50}
               alt="Picture of the author"
             />
             <div className={styles.description}>
@@ -56,9 +53,8 @@ export default function Home() {
         <Link href="/blog">
           <div className={styles["wrapper-post"]}>
             <Image
+              className={styles.picture}
               src={img2}
-              width={50}
-              height={50}
               alt="Picture of the author"
             />
             <div className={styles.description}>
@@ -70,9 +66,8 @@ export default function Home() {
         <Link href="/blog">
           <div className={styles["wrapper-post"]}>
             <Image
+              className={styles.picture}
               src={img3}
-              width={50}
-              height={50}
               alt="Picture of the author"
             />
             <div className={styles.description}>
@@ -84,9 +79,8 @@ export default function Home() {
         <Link href="/blog">
           <div className={styles["wrapper-post"]}>
             <Image
+              className={styles.picture}
               src={img3}
-              width={50}
-              height={50}
               alt="Picture of the author"
             />
             <div className={styles.description}>
