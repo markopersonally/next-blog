@@ -8,6 +8,7 @@
   gap: 35px;
   background-color: #212121;
   border: 1px solid #303096;
+  border-radius: 20px;
 }
 
 .wrapper-post {
@@ -16,8 +17,15 @@
   gap: 30px;
   justify-content: center;
   background-color: #474646;
-  border: 1px solid #303096;
+  border: 3px solid #303096;
   border-radius: 20px;
+  box-shadow: 2px 2px 20px 2px #474646;
+  transition: background-color 0.5s, scale 0.5s ease-in-out;
+}
+
+.wrapper-post:hover {
+  scale: 0.95;
+  background-color: #4746468e;
 }
 
 .picture {
