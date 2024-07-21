@@ -1,0 +1,28 @@
+.content-about {
+  padding: 30px;
+  width: 500px;
+  margin: auto;
+  margin-top: 75px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  background-color: #323232;
+  border-radius: 30px;
+  letter-spacing: 2px;
+}
+
+.picuture-logo {
+  width: 75px;
+  height: 75px;
+  padding: 10px;
+  background-color: #000;
+  border: 1px solid #fff;
+  border-radius: 20px;
+}
+
+.paragraph {
+  text-align: center;
+  line-height: 25px;
+}
