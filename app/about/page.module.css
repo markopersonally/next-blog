@@ -10,6 +10,7 @@
   gap: 30px;
   background-color: #323232;
   border-radius: 30px;
+  letter-spacing: 2px;
 }
 
 .picuture-logo {
@@ -19,4 +20,9 @@
   background-color: #000;
   border: 1px solid #fff;
   border-radius: 20px;
+}
+
+.paragraph {
+  text-align: center;
+  line-height: 25px;
 }

@@ -10,7 +10,7 @@ export default function About() {
       <div className={styles["content-about"]}>
         <h2>Hello, I'm Marcin!🥸</h2>
         <Image className={styles["picuture-logo"]} src={logo} alt="logo" />
-        <p>
+        <p className={styles.paragraph}>
           I am passionate about programming and enjoy developing innovative
           solutions and user-friendly applications. Feel free to reach out to me
           for any programming inquiries or collaboration ideas.
