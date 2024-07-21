@@ -7,7 +7,7 @@ export default function About() {
   return (
     <main>
       <NavBar />
-      <div>
+      <div className={styles["content-about"]}>
         <h2>Hello, I'm Marcin!🥸</h2>
         <Image src={logo} alt="logo" />
         <p>
