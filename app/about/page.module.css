@@ -11,3 +11,12 @@
   background-color: #323232;
   border-radius: 30px;
 }
+
+.picuture-logo {
+  width: 75px;
+  height: 75px;
+  padding: 10px;
+  background-color: #000;
+  border: 1px solid #fff;
+  border-radius: 20px;
+}

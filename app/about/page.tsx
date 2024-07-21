@@ -9,7 +9,7 @@ export default function About() {
       <NavBar />
       <div className={styles["content-about"]}>
         <h2>Hello, I'm Marcin!🥸</h2>
-        <Image src={logo} alt="logo" />
+        <Image className={styles["picuture-logo"]} src={logo} alt="logo" />
         <p>
           I am passionate about programming and enjoy developing innovative
           solutions and user-friendly applications. Feel free to reach out to me
