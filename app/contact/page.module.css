@@ -1,0 +1,22 @@
+.wrapper-content {
+  margin-top: 74px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.box-content {
+  padding: 20px;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  border: 2px solid salmon;
+}
+
+.photo {
+  width: 74px;
+  height: 74px;
+}
