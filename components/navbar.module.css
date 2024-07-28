@@ -1,4 +1,5 @@
 .nav {
+  width: 550px;
   margin: auto;
   padding: 20px 0;
   display: flex;
@@ -26,4 +27,50 @@
 .nav a:hover {
   color: #fff;
   transition: color 0.5s ease-in;
+}
+
+.switch-container {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+}
+
+.switch-checkbox {
+  display: none;
+}
+
+.switch-label {
+  display: inline-block;
+  width: 50px;
+  height: 25px;
+  background-color: grey;
+  border-radius: 15px;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.switch-label::before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 50%;
+  top: 2.5px;
+  left: 2.5px;
+  transition: left 0.3s;
+}
+
+.switch-checkbox:checked + .switch-label {
+  background-color: #333;
+}
+
+.switch-checkbox:checked + .switch-label::before {
+  left: 27.5px;
+}
+
+.switch-checkbox:checked ~ .content {
+  background-color: #333;
+  color: white;
 }
