@@ -5,7 +5,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #212120;
   border-bottom-left-radius: 40px;
   border-bottom-right-radius: 40px;
 }
@@ -20,19 +19,13 @@
 }
 
 .nav a {
-  color: #ffe100;
+  color: #007bff;
   text-shadow: -1px -1px 10px #fff;
 }
 
 .nav a:hover {
-  color: #fff;
+  color: #193e8e;
   transition: color 0.5s ease-in;
-}
-
-.switch-container {
-  position: fixed;
-  top: 10px;
-  right: 10px;
 }
 
 .switch-checkbox {
