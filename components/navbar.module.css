@@ -1,10 +1,10 @@
 .nav {
+  width: 550px;
   margin: auto;
   padding: 20px 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #212120;
   border-bottom-left-radius: 40px;
   border-bottom-right-radius: 40px;
 }
@@ -19,11 +19,51 @@
 }
 
 .nav a {
-  color: #ffe100;
+  color: #007bff;
   text-shadow: -1px -1px 10px #fff;
 }
 
 .nav a:hover {
-  color: #fff;
+  color: #193e8e;
   transition: color 0.5s ease-in;
+}
+
+.switch-checkbox {
+  display: none;
+}
+
+.switch-label {
+  display: inline-block;
+  width: 50px;
+  height: 25px;
+  background-color: grey;
+  border-radius: 15px;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.switch-label::before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 50%;
+  top: 2.5px;
+  left: 2.5px;
+  transition: left 0.3s;
+}
+
+.switch-checkbox:checked + .switch-label {
+  background-color: #333;
+}
+
+.switch-checkbox:checked + .switch-label::before {
+  left: 27.5px;
+}
+
+.switch-checkbox:checked ~ .content {
+  background-color: #333;
+  color: white;
 }
