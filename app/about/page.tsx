@@ -6,7 +6,6 @@ import styles from "./page.module.css";
 export default function About() {
   return (
     <main>
-      <NavBar />
       <div className={styles["content-about"]}>
         <h2>Hello, I'm Marcin!🥸</h2>
         <Image className={styles["picuture-logo"]} src={logo} alt="logo" />
