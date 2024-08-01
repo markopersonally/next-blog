@@ -8,7 +8,6 @@ import styles from "./page.module.css";
 export default function Contact() {
   return (
     <main>
-      <NavBar />
       <div className={styles["wrapper-content"]}>
         <div className={styles["box-content"]}>
           <Image className={styles.photo} src={photo1} alt="photo1" />

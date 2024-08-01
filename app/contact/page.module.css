@@ -1,5 +1,6 @@
 .wrapper-content {
   margin-top: 74px;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;

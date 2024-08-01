@@ -1,0 +1,14 @@
+#footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+  color: #fff;
+}
+
+.links {
+  display: flex;
+  gap: 40px;
+  list-style: none;
+}
