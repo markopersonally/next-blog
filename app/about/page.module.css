@@ -1,6 +1,10 @@
+.main {
+  height: 100vh;
+}
+
 .content-about {
   padding: 30px;
-  width: 500px;
+  width: 750px;
   margin: auto;
   margin-top: 75px;
   display: flex;
@@ -8,17 +12,15 @@
   justify-content: center;
   align-items: center;
   gap: 30px;
-  background-color: #323232;
+  background-color: #c9c9c9;
   border-radius: 30px;
   letter-spacing: 2px;
 }
 
 .picuture-logo {
-  width: 75px;
-  height: 75px;
-  padding: 10px;
-  background-color: #000;
-  border: 1px solid #fff;
+  width: 250px;
+  height: 200px;
+  border: 1px solid #5c5c5c;
   border-radius: 20px;
 }
 
