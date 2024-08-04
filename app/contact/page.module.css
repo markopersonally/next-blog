@@ -1,6 +1,11 @@
+.h2 {
+  margin: 50px auto;
+  font-size: 40px;
+  text-align: center;
+}
+
 .wrapper-content {
-  margin-top: 74px;
-  height: 100vh;
+  margin: 150px 0;
   display: flex;
   justify-content: center;
   align-items: center;
