@@ -11,33 +11,40 @@ import { GiHeartInside } from "react-icons/gi";
 export default function Contact() {
   return (
     <main>
+      <div className={styles.backdrop}></div>
       <h2 className={styles.h2}>Skontaktuj się ze mną!</h2>
       <div className={styles["wrapper-content"]}>
         <div className={styles["box-content"]}>
           <Image className={styles.photo} src={photo1} alt="photo1" />
           <h3>
             <GiHeartInside />
+            @phone
           </h3>
           <h4>
             <SiCodeigniter />
+            @phone
           </h4>
         </div>
         <div className={styles["box-content"]}>
           <Image className={styles.photo} src={photo2} alt="photo2" />
           <h3>
             <FiInstagram />
+            @instagram
           </h3>
           <h4>
             <SiCodeigniter />
+            @instagram
           </h4>
         </div>
         <div className={styles["box-content"]}>
           <Image className={styles.photo} src={photo3} alt="photo3" />
           <h3>
             <FiGitlab />
+            @git
           </h3>
           <h4>
             <SiCodeigniter />
+            @git
           </h4>
         </div>
       </div>
