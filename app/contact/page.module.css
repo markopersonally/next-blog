@@ -1,6 +1,19 @@
+.h2 {
+  margin: 50px auto;
+  font-size: 40px;
+  text-align: center;
+}
+
+.backdrop {
+  position: absolute;
+  width: 100vw;
+  height: 50vh;
+  background-color: #175b9b;
+  z-index: -1;
+}
+
 .wrapper-content {
-  margin-top: 74px;
-  height: 100vh;
+  margin: 150px 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -9,12 +22,14 @@
 
 .box-content {
   padding: 20px;
-  width: 200px;
+  width: 300px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  border: 2px solid salmon;
+  background-color: #fff;
+  border: 1px solid #000;
+  box-shadow: 10px 5px 10px #000;
 }
 
 .photo {
