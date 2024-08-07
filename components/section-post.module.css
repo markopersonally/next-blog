@@ -1,7 +1,6 @@
 #container {
   position: relative;
   margin-top: 75px;
-  height: 100vh;
 }
 
 .featured-post {
@@ -26,7 +25,8 @@
   object-fit: cover;
 }
 
-.featured-post-description {
+.featured-post-description,
+.posts-description {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -50,4 +50,20 @@
 .featured-post-date {
   font-size: 1em;
   opacity: 0.8;
+}
+
+.postContent {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.post-container {
+  width: 500px;
+  height: 500px;
+}
+
+.post-image {
+  width: 250px;
+  height: 250px;
 }
