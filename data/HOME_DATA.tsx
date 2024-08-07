@@ -1,4 +1,4 @@
-import featuredImg from "@/images/tourist-8183867_1280.png";
+ import featuredImg from "@/images/tourist-8183867_1280.png";
 import alien from "@/images/alien.png";
 import cat from "@/images/cat.png";
 import fish from "@/images/fish.png";
