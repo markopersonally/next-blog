@@ -27,20 +27,19 @@ const SectionPost = () => {
           </div>
         </Link>
       </div>
-      <div className={styles.postContent}>
+      <div className={styles["post-content"]}>
         {postsList.map((post, index) => (
-          <div className={styles["post-container"]} key={index}>
+          <div key={index} className={styles["post-item"]}>
             <Link href="/">
-              <div className={styles["post-image"]}>
+              <div className={styles["image-wrapper"]}>
                 <Image
-                  className={styles["post-image"]}
                   src={post.img}
-                  layout="fill"
-                  objectFit="cover"
+                  fill
+                  style={{ objectFit: "cover" }}
                   alt={post.title}
                 />
               </div>
-              <div className={styles["posts-description"]}>
+              <div className={styles["post-details"]}>
                 <h3>{post.title}</h3>
                 <h4>{post.date}</h4>
               </div>
