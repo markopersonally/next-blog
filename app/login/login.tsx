@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import { FormEvent, useState } from "react";
 
 const Login = () => {
-  const [login, setLogin] = useState("");
-  const [password, setPassword] = useState("");
+  const [login, setLogin] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: FormEvent<HTMLFormElement>): void => {
     event.preventDefault();
     console.log("Login:", login);
     console.log("Hasło:", password);
