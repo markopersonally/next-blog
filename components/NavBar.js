@@ -21,7 +21,10 @@ export default function NavBar() {
           id="theme-switch"
           className={styles["switch-checkbox"]}
         />
-        <label for="theme-switch" className={styles["switch-label"]}></label>
+        <label
+          htmlFor="theme-switch"
+          className={styles["switch-label"]}
+        ></label>
       </div>
     </nav>
   );
