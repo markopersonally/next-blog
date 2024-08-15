@@ -1,49 +1,52 @@
- import featuredImg from "@/images/tourist-8183867_1280.png";
-import alien from "@/images/alien.png";
-import cat from "@/images/cat.png";
-import fish from "@/images/fish.png";
-import univers from "@/images/univers.png";
-import cobra from "@/images/cobra_1362523.png";
+import { collection, addDoc } from "firebase/firestore";
+import { db } from "@/app/firebase.js";
 
-interface PostProps {
-  img: {};
-  title: string;
-  date: string;
-}
-
-const featuredPost: PostProps = {
-  img: featuredImg,
+const featuredPost = {
+  img: "featuredImg.png",
   title: "Exploring the Tourist Spots",
   date: "July 29, 2024",
 };
 
-const postsList: PostProps[] = [
+const postsList = [
   {
-    img: alien,
+    img: "alien.png",
     title: "Alien Encounter",
     date: "August 1, 2024",
   },
   {
-    img: cat,
+    img: "cat.png",
     title: "Cats and Their Mysteries",
     date: "August 5, 2024",
   },
   {
-    img: fish,
+    img: "fish.png",
     title: "Underwater World",
     date: "August 10, 2024",
   },
   {
-    img: univers,
+    img: "univers.png",
     title: "Exploring the Universe",
     date: "September 29, 2024",
   },
   {
-    img: cobra,
+    img: "cobra_1362523.png",
     title: "The World of Cobras",
     date: "October 15, 2024",
   },
 ];
 
-export default featuredPost;
-export { postsList };
+async function uploadPosts() {
+  try {
+    await addDoc(collection(db, "posts"), featuredPost);
+
+    for (const post of postsList) {
+      await addDoc(collection(db, "posts"), post);
+    }
+
+    console.log("Posts uploaded successfully!");
+  } catch (error) {
+    console.error("Error uploading posts: ", error);
+  }
+}
+
+uploadPosts();
