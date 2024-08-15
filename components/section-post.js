@@ -1,9 +1,25 @@
+import { useEffect, useState } from "react";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "@/app/firebase.js";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./section-post.module.css";
 import featuredPost, { postsList } from "@/data/HOME_DATA.tsx";
 
 const SectionPost = () => {
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      const postsCollection = collection(db, "posts");
+      const postsSnapshot = await getDocs(postsCollection);
+      const postsList = postsSnapshot.docs.map((doc) => doc.data());
+      setPosts(postsList);
+    };
+
+    fetchPosts();
+  }, []);
+
   return (
     <div id={styles.container}>
       <div className={styles["featured-post"]}>
@@ -28,12 +44,12 @@ const SectionPost = () => {
         </Link>
       </div>
       <div className={styles["post-content"]}>
-        {postsList.map((post, index) => (
+        {posts.map((post, index) => (
           <div key={index} className={styles["post-item"]}>
             <Link href="/">
               <div className={styles["image-wrapper"]}>
                 <Image
-                  src={post.img}
+                  src={`/images/${post.img}`}
                   fill
                   style={{ objectFit: "cover" }}
                   alt={post.title}
