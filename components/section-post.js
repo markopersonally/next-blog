@@ -1,30 +1,35 @@
+"use client";
 import { useEffect, useState } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "@/app/firebase.js";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./section-post.module.css";
-import featuredPost, { postsList } from "@/data/HOME_DATA.tsx";
+import featuredPost from "@/data/HOME_DATA.tsx";
 
 const SectionPost = () => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const postsCollection = collection(db, "posts");
-      const postsSnapshot = await getDocs(postsCollection);
-      const postsList = postsSnapshot.docs.map((doc) => doc.data());
-      setPosts(postsList);
+      try {
+        const postsCollection = collection(db, "posts");
+        const postsSnapshot = await getDocs(postsCollection);
+        const postsList = postsSnapshot.docs.map((doc) => doc.data());
+        setPosts(postsList);
+      } catch (error) {
+        console.error("Error fetching posts: ", error);
+      }
     };
 
     fetchPosts();
   }, []);
 
   return (
-    <div id={styles.container}>
+    <div className={styles.container}>
       <div className={styles["featured-post"]}>
         <Link href="/">
-          <div>
+          <div className={styles["image-wrapper"]}>
             <Image
               className={styles["featured-post-image"]}
               src={featuredPost.img}
