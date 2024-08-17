@@ -15,14 +15,14 @@ interface Post {
   date: string;
 }
 
-const featuredPost: Post = {
+export const featuredPost: Post = {
   id: 1,
   img: featuredImg,
   title: "Exploring the Tourist Spots",
   date: "July 29, 2024",
 };
 
-const postsList: Post[] = [
+export const postsList: Post[] = [
   {
     id: 2,
     img: alien,
