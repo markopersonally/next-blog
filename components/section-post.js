@@ -5,7 +5,7 @@ import { db } from "@/app/firebase.js";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./section-post.module.css";
-import featuredPost from "@/data/HOME_DATA.tsx";
+import { featuredPost } from "@/data/HOME_DATA.tsx";
 
 const SectionPost = () => {
   const [posts, setPosts] = useState([]);
@@ -54,7 +54,7 @@ const SectionPost = () => {
             <Link href="/">
               <div className={styles["image-wrapper"]}>
                 <Image
-                  src={`/images/${post.img}`}
+                  src={post.img}
                   fill
                   style={{ objectFit: "cover" }}
                   alt={post.title}
