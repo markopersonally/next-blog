@@ -1,5 +1,6 @@
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "@/app/firebase.js";
+import { StaticImageData } from "next/image";
 import featuredImg from "@/images/tourist-8183867_1280.png";
 import alien from "@/images/alien.png";
 import cat from "@/images/cat.png";
@@ -8,7 +9,7 @@ import univers from "@/images/univers.png";
 import cobra from "@/images/cobra_1362523.png";
 
 interface Post {
-  img: {};
+  img: StaticImageData;
   title: string;
   date: string;
 }
