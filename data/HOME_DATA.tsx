@@ -9,39 +9,46 @@ import univers from "@/images/univers.png";
 import cobra from "@/images/cobra_1362523.png";
 
 interface Post {
+  id: number;
   img: StaticImageData;
   title: string;
   date: string;
 }
 
-const featuredPost: Post = {
+export const featuredPost: Post = {
+  id: 1,
   img: featuredImg,
   title: "Exploring the Tourist Spots",
   date: "July 29, 2024",
 };
 
-const postsList: Post[] = [
+export const postsList: Post[] = [
   {
+    id: 2,
     img: alien,
     title: "Alien Encounter",
     date: "August 1, 2024",
   },
   {
+    id: 3,
     img: cat,
     title: "Cats and Their Mysteries",
     date: "August 5, 2024",
   },
   {
+    id: 4,
     img: fish,
     title: "Underwater World",
     date: "August 10, 2024",
   },
   {
+    id: 5,
     img: univers,
     title: "Exploring the Universe",
     date: "September 29, 2024",
   },
   {
+    id: 6,
     img: cobra,
     title: "The World of Cobras",
     date: "October 15, 2024",
