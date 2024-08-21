@@ -1,33 +1,26 @@
 "use client";
 import { useEffect, useState } from "react";
-import { collection, getDocs } from "firebase/firestore";
-import { db } from "@/app/firebase.js";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./section-post.module.css";
-import { featuredPost } from "@/data/HOME_DATA.tsx";
+import { getPosts } from "@/utils/actions";
+import { Post } from "@/types/interfaces/post";
 
 const SectionPost = () => {
-  const [posts, setPosts] = useState([]);
+  const [posts, setPosts] = useState<Post[]>([]);
+
+  const fetchPosts = async () => {
+    const posts = (await getPosts()) || [];
+    setPosts(posts);
+  };
 
   useEffect(() => {
-    const fetchPosts = async () => {
-      try {
-        const postsCollection = collection(db, "posts");
-        const postsSnapshot = await getDocs(postsCollection);
-        const postsList = postsSnapshot.docs.map((doc) => doc.data());
-        setPosts(postsList);
-      } catch (error) {
-        console.error("Error fetching posts: ", error);
-      }
-    };
-
     fetchPosts();
   }, []);
 
   return (
     <div className={styles.container}>
-      <div className={styles["featured-post"]}>
+      {/* <div className={styles["featured-post"]}>
         <Link href="/">
           <div className={styles["image-wrapper"]}>
             <Image
@@ -47,7 +40,7 @@ const SectionPost = () => {
             </h4>
           </div>
         </Link>
-      </div>
+      </div> */}
       <div className={styles["post-content"]}>
         {posts.map((post, index) => (
           <div key={index} className={styles["post-item"]}>
