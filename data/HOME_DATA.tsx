@@ -68,5 +68,3 @@ async function uploadPosts(): Promise<void> {
     console.error("Error uploading posts: ", error);
   }
 }
-
-uploadPosts();
