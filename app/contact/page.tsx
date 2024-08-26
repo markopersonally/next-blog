@@ -8,7 +8,7 @@ import { FiGitlab } from "react-icons/fi";
 import { FiInstagram } from "react-icons/fi";
 import { GiHeartInside } from "react-icons/gi";
 
-export default function Contact() {
+const Contact = () => {
   return (
     <main>
       <div className={styles.backdrop}></div>
@@ -50,4 +50,6 @@ export default function Contact() {
       </div>
     </main>
   );
-}
+};
+
+export default Contact;
