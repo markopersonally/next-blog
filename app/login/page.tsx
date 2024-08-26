@@ -1,43 +1,34 @@
 "use client";
-import { FormEvent, useState } from "react";
-import styles from "./page.module.css";
+import FormContainer from "@/components/form/form-container";
+import FormInput from "@/components/form/form-input";
+import FormButton from "@/components/form/form-button";
 
 const Login = () => {
-  const [login, setLogin] = useState<string>("");
-  const [password, setPassword] = useState<string>("");
+  const handleLogin = async (
+    prevState: any,
+    formData: FormData
+  ): Promise<{ message: string }> => {
+    try {
+      const rawData = Object.fromEntries(formData);
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>): void => {
-    event.preventDefault();
-    console.log("Login:", login);
-    console.log("Password:", password);
+      console.log("rawData: ", rawData);
+
+      return {
+        message: "success",
+      };
+    } catch (error) {
+      return {
+        message: "error",
+      };
+    }
   };
 
   return (
-    <form className={styles.form} onSubmit={handleSubmit}>
-      <label className={styles.label} htmlFor="login">
-        Login
-      </label>
-      <input
-        className={styles.input}
-        type="text"
-        id="login"
-        value={login}
-        onChange={(e) => setLogin(e.target.value)}
-      />
-      <label className={styles.label} htmlFor="password">
-        Password
-      </label>
-      <input
-        className={styles.input}
-        type="password"
-        id="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <button className={styles.button} type="submit">
-        Log in
-      </button>
-    </form>
+    <FormContainer action={handleLogin}>
+      <FormInput type="text" name="login" label="Login" />
+      <FormInput type="password" name="password" label="Password" />
+      <FormButton text="Log in" />
+    </FormContainer>
   );
 };
 
