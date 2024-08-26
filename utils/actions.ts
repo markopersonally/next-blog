@@ -1,5 +1,5 @@
 import { collection, getDocs } from "firebase/firestore";
-import { db } from "@/app/firebase.js";
+import { db } from "@/app/firebase";
 import { Collections } from "@/types/enums/collections";
 import { Post } from "@/types/interfaces/post";
 
