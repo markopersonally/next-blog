@@ -20,3 +20,9 @@ export async function getPosts() {
     console.error("Error fetching posts: ", error);
   }
 }
+
+export async function addPost() {}
+
+export async function deletePost() {}
+
+export async function editPost() {}

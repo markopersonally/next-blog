@@ -1,26 +1,30 @@
 import Image from "next/image";
-import logo from "@/images/boy-8530678_1280.png";
+import img1 from "@/images/about1.png";
+import img2 from "@/images/about2.png";
 import styles from "./page.module.css";
 
-export default function About() {
+const About = () => {
   return (
     <main className={styles.main}>
-      <div className={styles["content-about"]}>
-        <h2>About me</h2>
-        <Image className={styles["picuture-logo"]} src={logo} alt="logo" />
+      <h2 className={styles.h2}>About me</h2>
+      <div className={styles["about-content"]}>
+        <button className={styles.button}>Click me!</button>
+        <Image className={styles.img1} src={img1} alt="img1" />
         <p className={styles.paragraph}>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illo
-          sapiente porro nihil iusto. Tenetur sed quia iusto rerum, repellat,
-          omnis doloremque dolorem, vero quod eum eius. Ea impedit amet
-          eligendi! Corporis sit maiores temporibus nostrum ratione, excepturi
-          facere amet quasi adipisci repudiandae laboriosam obcaecati dolor in
-          ad. Nulla id dolorum numquam iure sint necessitatibus eum voluptatum?
-          Deleniti doloremque recusandae porro. Animi temporibus laudantium
-          eius. Voluptatibus repellat vitae omnis quod ab assumenda, vel, eaque
-          perferendis quaerat placeat ad officia id minus corporis sapiente
-          alias modi! Eveniet quo cumque quod alias aut?
+          I am a 24-year-old front-end programmer based near Warsaw, with a
+          passion for creating dynamic and user-friendly web interfaces. With a
+          solid foundation in modern web technologies and a keen eye for design,
+          I specialize in building responsive and efficient applications that
+          provide seamless user experiences. I am always eager to learn and stay
+          updated with the latest industry trends, ensuring that my skills
+          remain sharp and relevant. You can check out my work and see my coding
+          journey on my GitHub profile, where I regularly contribute to
+          projects.
         </p>
+        <Image className={styles.img2} src={img2} alt="img2" />
       </div>
     </main>
   );
-}
+};
+
+export default About;

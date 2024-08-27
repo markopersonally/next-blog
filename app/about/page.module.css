@@ -1,30 +1,64 @@
 .main {
-  height: 100vh;
-}
-
-.content-about {
-  height: 100%;
   margin: auto;
-  margin-top: 75px;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 30px;
-  background-color: #c9c9c9;
-  border-radius: 30px;
-  letter-spacing: 2px;
+  max-width: 1200px;
+  background-color: #d2e5ff;
 }
 
-.picuture-logo {
+.h2 {
+  font-size: 2rem;
+  text-align: center;
+  color: #333;
+}
+
+.about-content {
+  margin-bottom: 100px;
+  border-bottom: 1px solid #333;
+  height: 100vh;
+  position: relative;
+}
+
+.button {
+  width: 150px;
+  height: 50px;
+  position: absolute;
+  right: 20%;
+  top: 20%;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: #093a9a86;
+  color: #f5deb3;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: scale 0.5s ease-in, background-color 0.5s ease-in;
+}
+
+.button:hover {
+  scale: 1.1;
+  background-color: #1550c586;
+}
+
+.img1 {
+  position: absolute;
+  left: 10%;
   width: 250px;
-  height: 200px;
-  border: 1px solid #5c5c5c;
-  border-radius: 20px;
+  height: 300px;
 }
 
 .paragraph {
+  width: 500px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
-  line-height: 25px;
+  line-height: 20px;
+}
+
+.img2 {
+  position: absolute;
+  right: 10%;
+  bottom: 0;
+  width: 200px;
+  height: 350px;
 }
