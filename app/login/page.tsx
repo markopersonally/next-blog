@@ -7,13 +7,13 @@ import FormButton from "@/components/form/form-button";
 import { onLogin } from "@/utils/actions";
 
 const Login = () => {
-  // const [success, setSuccess] = useState(false);
+  const [success, setSuccess] = useState(false);
 
-  // useEffect(() => {
-  //   if (success) {
-  //     redirect("/dashboard");
-  //   }
-  // }, [success]);
+  useEffect(() => {
+    if (success) {
+      redirect("/dashboard");
+    }
+  }, [success]);
 
   const handleLogin = async (
     prevState: any,
@@ -21,9 +21,9 @@ const Login = () => {
   ): Promise<{ message: string }> => {
     try {
       const rawData = Object.fromEntries(formData) as { [key: string]: string };
-      const { login, passsword } = rawData;
-      await onLogin(login, passsword);
-      console.log("rawData: ", rawData);
+      const { login, password } = rawData;
+      const isSuccess = await onLogin(login, password);
+      setSuccess(isSuccess);
       return {
         message: "success",
       };
@@ -35,11 +35,13 @@ const Login = () => {
   };
 
   return (
-    <FormContainer action={handleLogin}>
-      <FormInput type="text" name="login" label="Login" />
-      <FormInput type="password" name="password" label="Password" />
-      <FormButton text="Log in" />
-    </FormContainer>
+    <main>
+      <FormContainer action={handleLogin}>
+        <FormInput type="text" name="login" label="Login :" />
+        <FormInput type="password" name="password" label="Password :" />
+        <FormButton text="Log in" />
+      </FormContainer>
+    </main>
   );
 };
 

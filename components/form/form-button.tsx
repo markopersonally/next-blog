@@ -1,5 +1,6 @@
 "use client";
 import { useFormStatus } from "react-dom";
+import styles from "./form-button.module.css";
 
 type SubmitButtonProps = {
   className?: string;
@@ -13,9 +14,9 @@ const FormButton = ({ className = "", text = "" }: SubmitButtonProps) => {
     <button
       type="submit"
       disabled={pending}
-      className={`capitalize ${className}`}
+      className={`capitalize ${className} ${styles.button}`}
     >
-      {pending ? <>Loading</> : text}
+      {pending ? <>Loading..</> : text}
     </button>
   );
 };

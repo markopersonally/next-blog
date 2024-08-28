@@ -5,7 +5,7 @@ import { Post } from "@/types/interfaces/post";
 import {
   signInWithEmailAndPassword,
   signOut,
-  onAuthStateChanged,
+  // onAuthStateChanged,
 } from "firebase/auth";
 
 export async function getPosts() {

@@ -1,0 +1,24 @@
+.div {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.label {
+  font-size: 20px;
+  text-transform: capitalize;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  color: #0e0e0e;
+}
+
+.input {
+  padding: 10px;
+  max-width: 300px;
+  background-color: #0e0e0ece;
+  color: #f5deb3;
+  font-size: 15px;
+  border: none;
+  border-radius: 7px;
+}
