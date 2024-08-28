@@ -36,7 +36,7 @@
   display: inline-block;
   width: 50px;
   height: 25px;
-  background-color: grey;
+  background-color: #808080;
   border-radius: 15px;
   position: relative;
   cursor: pointer;
@@ -48,7 +48,7 @@
   position: absolute;
   width: 20px;
   height: 20px;
-  background-color: white;
+  background-color: #ffffff;
   border-radius: 50%;
   top: 2.5px;
   left: 2.5px;
