@@ -1,7 +1,12 @@
 import { collection, getDocs } from "firebase/firestore";
-import { db } from "@/app/firebase";
+import { db, auth } from "@/app/firebase";
 import { Collections } from "@/types/enums/collections";
 import { Post } from "@/types/interfaces/post";
+import {
+  signInWithEmailAndPassword,
+  signOut,
+  onAuthStateChanged,
+} from "firebase/auth";
 
 export async function getPosts() {
   const postsCollection = collection(db, Collections.POSTS);
@@ -18,6 +23,24 @@ export async function getPosts() {
     return posts;
   } catch (error) {
     console.error("Error fetching posts: ", error);
+  }
+}
+
+export async function onLogin(user: string, password: string) {
+  try {
+    await signInWithEmailAndPassword(auth, user, password);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+export async function onLogout() {
+  try {
+    await signOut(auth);
+    return true;
+  } catch {
+    return false;
   }
 }
 
