@@ -1,9 +1,11 @@
 import SectionPost from "@/components/section-post";
 
-export default function Home() {
+const Home = () => {
   return (
     <main>
       <SectionPost />
     </main>
   );
-}
+};
+
+export default Home;

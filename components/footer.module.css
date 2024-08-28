@@ -1,4 +1,5 @@
 #footer {
+  padding: 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -7,8 +8,12 @@
   color: #fff;
 }
 
-.links {
+.container-links {
   display: flex;
   gap: 40px;
   list-style: none;
+}
+
+.link {
+  color: #fff;
 }
