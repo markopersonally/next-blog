@@ -1,13 +1,26 @@
 "use client";
+import { useState, useEffect } from "react";
 import { onLogout } from "@/utils/actions";
-import { redirect } from "next/navigation";
 import styles from "./page.module.css";
+import { redirect } from "next/navigation";
+import { useAppContext } from "../provider";
 
 const Dashboard = () => {
+  const [isLogOut, setIsLogOut] = useState(false);
+
+  const { isLogIn } = useAppContext();
+
+  useEffect(() => {
+    if (isLogOut) {
+      return redirect("/login");
+    }
+    console.log(isLogIn);
+  }, [isLogOut]);
+
   const handleLogOut = async () => {
     try {
       await onLogout();
-      redirect("/");
+      setIsLogOut(true);
     } catch (error) {
       console.log("error");
     }

@@ -15,17 +15,6 @@ const NavBar = () => {
           <Link href="/contact">Contact</Link>
         </li>
       </ul>
-      <div className={styles["switch-container"]}>
-        <input
-          type="checkbox"
-          id="theme-switch"
-          className={styles["switch-checkbox"]}
-        />
-        <label
-          htmlFor="theme-switch"
-          className={styles["switch-label"]}
-        ></label>
-      </div>
     </nav>
   );
 };
