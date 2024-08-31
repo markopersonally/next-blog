@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { onLogout } from "@/utils/actions";
 import styles from "./page.module.css";
 import { redirect } from "next/navigation";
-import { useAppContext } from "../Provider";
+import { useAppContext } from "../provider";
 
 const Dashboard = () => {
   const [isLogOut, setIsLogOut] = useState(false);
