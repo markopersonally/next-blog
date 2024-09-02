@@ -4,30 +4,46 @@ import { redirect } from "next/navigation";
 import FormContainer from "@/components/form/form-container";
 import FormInput from "@/components/form/form-input";
 import FormButton from "@/components/form/form-button";
+import { useAppContext } from "../provider";
 import { onLogin } from "@/utils/actions";
 
 const Login = () => {
   const [success, setSuccess] = useState(false);
 
+  const { isLogIn, setIsLogIn } = useAppContext();
+
   useEffect(() => {
-    if (success) {
+    console.log("isLoggedIn", isLogIn);
+    if (success || isLogIn) {
       redirect("/dashboard");
     }
-  }, [success]);
+  }, [success, isLogIn]);
 
   const handleLogin = async (
     prevState: any,
     formData: FormData
   ): Promise<{ message: string }> => {
+    let success = false;
     try {
       const rawData = Object.fromEntries(formData) as { [key: string]: string };
+
       const { login, password } = rawData;
-      const isSuccess = await onLogin(login, password);
-      setSuccess(isSuccess);
+
+      success = await onLogin(login, password);
+
+      setSuccess(true);
+
+      if (!success) {
+        throw new Error("Invalid credentials");
+      }
+
+      setIsLogIn(true);
       return {
         message: "success",
       };
     } catch (error) {
+      setSuccess(false);
+      setIsLogIn(false);
       return {
         message: "error",
       };
