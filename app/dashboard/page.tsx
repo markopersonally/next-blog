@@ -1,6 +1,5 @@
 "use client";
 import { useState, useEffect } from "react";
-import { onLogout } from "@/utils/actions";
 import styles from "./page.module.css";
 import { redirect } from "next/navigation";
 import { useAppContext } from "../provider";
@@ -8,28 +7,28 @@ import { useAppContext } from "../provider";
 const Dashboard = () => {
   const [isLogOut, setIsLogOut] = useState(false);
 
-  const { isLogIn } = useAppContext();
+  const { isLogIn, onLogout } = useAppContext();
 
   useEffect(() => {
-    if (isLogOut) {
+    if (isLogIn) {
       return redirect("/login");
     }
     console.log(isLogIn);
-  }, [isLogOut]);
+  }, [isLogIn]);
 
-  const handleLogOut = async () => {
-    try {
-      await onLogout();
-      setIsLogOut(true);
-    } catch (error) {
-      console.log("error");
-    }
-  };
+  // const handleLogOut = async () => {
+  //   try {
+  //     await onLogout();
+  //     setIsLogOut(true);
+  //   } catch (error) {
+  //     console.log("error");
+  //   }
+  // };
 
   return (
     <main className={styles.main}>
       <h1>Dashboard</h1>
-      <button onClick={handleLogOut}>Log out</button>
+      <button onClick={onLogout}>Log out</button>
       <table>
         <thead>
           <tr>
