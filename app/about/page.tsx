@@ -5,7 +5,7 @@ import styles from "./page.module.css";
 
 const About = () => {
   return (
-    <main className={styles.main}>
+    <>
       <h2 className={styles.h2}>About me</h2>
       <div className={styles["about-content"]}>
         <button className={styles.button}>Click me!</button>
@@ -23,7 +23,7 @@ const About = () => {
         </p>
         <Image className={styles.img2} src={img2} alt="img2" />
       </div>
-    </main>
+    </>
   );
 };
 

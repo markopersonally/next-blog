@@ -51,13 +51,11 @@ const Login = () => {
   };
 
   return (
-    <main>
       <FormContainer action={handleLogin}>
         <FormInput type="text" name="login" label="Login :" />
         <FormInput type="password" name="password" label="Password :" />
         <FormButton text="Log in" />
       </FormContainer>
-    </main>
   );
 };
 
