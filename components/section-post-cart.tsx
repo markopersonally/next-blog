@@ -1,5 +1,5 @@
 const SectionPostCart = () => {
-  return <main></main>;
+  return <></>;
 };
 
 export default SectionPostCart;

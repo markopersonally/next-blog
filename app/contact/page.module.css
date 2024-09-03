@@ -2,14 +2,7 @@
   margin: 50px auto;
   font-size: 40px;
   text-align: center;
-}
-
-.backdrop {
-  position: absolute;
-  width: 100%;
-  height: 50%;
-  background-color: #175b9b;
-  z-index: -1;
+  z-index: 1;
 }
 
 .wrapper-content {
@@ -19,6 +12,7 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 30px;
+  z-index: 3;
 }
 
 .box-content {

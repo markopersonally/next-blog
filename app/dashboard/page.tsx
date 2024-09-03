@@ -1,53 +1,54 @@
 "use client";
-import { useState, useEffect } from "react";
-import styles from "./page.module.css";
+import { useEffect } from "react";
 import { redirect } from "next/navigation";
-import { useAppContext } from "../provider";
+import { useAppContext } from "@/app/provider";
+import styles from "./page.module.css";
+import { FaEdit, FaTrash } from "react-icons/fa";
 
 const Dashboard = () => {
-  const [isLogOut, setIsLogOut] = useState(false);
-
   const { isLogIn, onLogout } = useAppContext();
 
   useEffect(() => {
-    if (isLogIn) {
+    if (!isLogIn) {
       return redirect("/login");
     }
-    console.log(isLogIn);
   }, [isLogIn]);
-
-  // const handleLogOut = async () => {
-  //   try {
-  //     await onLogout();
-  //     setIsLogOut(true);
-  //   } catch (error) {
-  //     console.log("error");
-  //   }
-  // };
-
   return (
-    <main className={styles.main}>
-      <h1>Dashboard</h1>
+    <>
       <button onClick={onLogout}>Log out</button>
-      <table>
-        <thead>
+      <h1 className={styles.h1}>Dashboard</h1>
+      <button className={styles.add}>+ Create post</button>
+      <table className={styles.table}>
+        <thead className={styles.thead}>
           <tr>
-            <th>id.post</th>
-            <th>title.post</th>
-            <th>edit.post</th>
-            <th>delete.post</th>
+            <th>id</th>
+            <th>title</th>
+            <th>date</th>
+            <th>img</th>
+            <th>edit post</th>
+            <th>delete post</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className={styles.tbody}>
           <tr>
             <td>1</td>
             <td>title</td>
-            <td>edit</td>
-            <td>delete</td>
+            <td>date</td>
+            <td>img</td>
+            <td>
+              <button className={styles.edit}>
+                <FaEdit />
+              </button>
+            </td>
+            <td>
+              <button className={styles.delete}>
+                <FaTrash />
+              </button>
+            </td>
           </tr>
         </tbody>
       </table>
-    </main>
+    </>
   );
 };
 
