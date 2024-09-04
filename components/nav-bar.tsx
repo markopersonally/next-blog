@@ -1,9 +1,14 @@
+"use client";
 import Link from "next/link";
-import styles from "./nav-bar.module.css";
 import logo from "@/images/elephant_1841047.png";
 import Image from "next/image";
+import { useAppContext } from "@/app/provider";
+import styles from "./nav-bar.module.css";
 
 const NavBar = () => {
+  const { isLogIn, onLogout } = useAppContext();
+  const handleLogOut = () => (isLogIn ? onLogout() : null);
+
   return (
     <nav className={styles.nav}>
       <div>
@@ -21,9 +26,18 @@ const NavBar = () => {
         <li>
           <Link href="/contact">Contact</Link>
         </li>
+        {isLogIn ? (
+          <li>
+            <Link href="/dashboard">Dashboard</Link>
+          </li>
+        ) : (
+          <></>
+        )}
       </ul>
-      <Link href="/login">
-        <button className={styles["btn-log-in"]}>Log In</button>
+      <Link href={isLogIn ? "/" : "/login"}>
+        <button onClick={handleLogOut} className={styles["btn-log-in"]}>
+          {isLogIn ? "Log Out" : "Log In"}
+        </button>
       </Link>
     </nav>
   );
