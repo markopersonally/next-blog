@@ -1,4 +1,10 @@
-import { collection, getDocs } from "firebase/firestore";
+import {
+  collection,
+  addDoc,
+  doc,
+  deleteDoc,
+  updateDoc,
+} from "firebase/firestore";
 import { db, auth } from "@/app/firebase";
 import { Collections } from "@/types/enums/collections";
 import { Post } from "@/types/interfaces/post";
@@ -18,7 +24,7 @@ export async function getPosts() {
 
     return posts;
   } catch (error) {
-    console.error("Error fetching posts: ", error);
+    console.error("error", error);
   }
 }
 
@@ -31,8 +37,42 @@ export async function onLogin(user: string, password: string) {
   }
 }
 
-export async function addPost() {}
+export async function addPost(newPost: Post) {
+  try {
+    const postsCollection = collection(db, Collections.POSTS);
+    const postRef = await addDoc(postsCollection, {
+      title: newPost.title,
+      date: newPost.date,
+      img: newPost.img,
+    });
+    console.log("added", postRef.id);
+    return postRef.id;
+  } catch (error) {
+    console.error("error added", error);
+    return null;
+  }
+}
 
-export async function deletePost() {}
+export async function deletePost(postId: string) {
+  try {
+    const postDocRef = doc(db, Collections.POSTS, postId);
+    await deleteDoc(postDocRef);
+    console.log("deleted", postId);
+    return true;
+  } catch (error) {
+    console.error("error deleting", error);
+    return false;
+  }
+}
 
-export async function editPost() {}
+export async function editPost(postId: string, updatedPost: Partial<Post>) {
+  try {
+    const postDocRef = doc(db, Collections.POSTS, postId);
+    await updateDoc(postDocRef, updatedPost);
+    console.log("updated", postId);
+    return true;
+  } catch (error) {
+    console.error("error updating", error);
+    return false;
+  }
+}
